@@ -232,4 +232,15 @@ def gameBMI():
         messagebox.showerror("Error Message", error_message_two)
 
 
+# TKINTER BUTTONS
+# The reason the buttons have been implemented here is because these buttons call functions like BMI and gameBMI
+# However we need to write these functions before implementing the buttons otherwise the program will not know them.
+generate_result_button = Button(window2, text='Get Result',fg='#535353',font=('Calibri', 12, 'normal'), command=BMI)
+generate_result_button.config(width=9)
+generate_result_button.place(x=460, y=340)
+
+guess_button = Button(window3, text='Guess',fg='#535353',font=('Calibri', 12, 'italic'), command= lambda: threading.Thread(target=gameBMI).start())
+guess_button. config(width=8)
+guess_button.place(x=545, y=370)
+
 mainWindow.mainloop()
