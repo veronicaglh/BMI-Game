@@ -117,3 +117,13 @@ game_mode_result = Label(window3, text='Result:', bg='#DAF3F0',fg='#535353', fon
 game_mode_result_text_box = Text(window3, height=5, width=25, wrap=WORD, highlightthickness=2)
 game_mode_result_text_box.config(highlightcolor='#DAF3F0')
 
+
+# Placing the widgets of window 3
+game_mode_title.place(x=410, y=120)
+game_mode_label_a.place(x=415, y=160)
+game_mode_label_b.place(x=415, y=180)
+game_mode_entry.place(x=415, y=200)
+game_mode_entry_box.place(x=415, y=225)
+game_mode_result.place(x=415, y=260)
+game_mode_result_text_box.place(x=415, y=280)
+# ~~~~~~~~~~~~~~~~ end of window3 ~~~~~~~~~~~~~~~~
