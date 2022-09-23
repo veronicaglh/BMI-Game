@@ -79,3 +79,24 @@ game_mode_button.place(x=430, y=305)
 calculate_button.place(x=525, y=305)
 # ~~~~~~~~~~~~~~~~ end of window1 ~~~~~~~~~~~~~~~~
 
+
+# ~~~~~~~~~~~~~~~~ window2 ~~~~~~~~~~~~~~~~
+# Since the background image has already been loaded(in window1)
+# we do not need to load it again
+img = Label(window2, image=render)
+img.place(x=0, y=0)
+
+calculate_title = Label(window2, text='Calculate', bg='#DAF3F0',fg='black',font=('Modern', 25, 'bold'))
+result_label = Label(window2, text='Result:', bg='#DAF3F0',fg='#535353', font=('Calibri', 13, 'normal'))
+result_text_box = Text(window2, height=8, width=25, wrap=WORD, highlightthickness=2)
+result_text_box.config(highlightcolor='#DAF3F0')
+
+back_button = Button(window2, text='Back',fg='#535353',font=('Calibri', 12, 'normal'), command=lambda: show_frame(window1))
+back_button. config(width=8)
+
+# Placing the widgets of window 2
+calculate_title.place(x=410, y=120)
+result_label.place(x=415, y=170)
+result_text_box.place(x=415,y=200)
+back_button.place(x=545, y=340)
+# ~~~~~~~~~~~~~~~~ end of window2 ~~~~~~~~~~~~~~~~
