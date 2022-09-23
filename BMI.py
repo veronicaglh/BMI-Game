@@ -117,7 +117,6 @@ game_mode_result = Label(window3, text='Result:', bg='#DAF3F0',fg='#535353', fon
 game_mode_result_text_box = Text(window3, height=5, width=25, wrap=WORD, highlightthickness=2)
 game_mode_result_text_box.config(highlightcolor='#DAF3F0')
 
-
 # Placing the widgets of window 3
 game_mode_title.place(x=410, y=120)
 game_mode_label_a.place(x=415, y=160)
@@ -127,3 +126,56 @@ game_mode_entry_box.place(x=415, y=225)
 game_mode_result.place(x=415, y=260)
 game_mode_result_text_box.place(x=415, y=280)
 # ~~~~~~~~~~~~~~~~ end of window3 ~~~~~~~~~~~~~~~~
+
+
+# CALCULATING THE BMI
+def BMI():
+    """ A function for calculating BodyMassIndex for the user """
+    gender = get_biological_sex_entry.get()
+
+    try:
+        height = float(get_height_entry.get())
+        weight = float(get_weight_entry.get())
+        bmi = float(weight // (height * height))
+        if gender == 'M' or gender == 'm' or gender == "Male" or gender == "male":
+            if bmi >= 20 and bmi <= 30:
+                result_message_1 = f"BMI of {bmi} is healthy for you."
+                result_text_box.insert('end', result_message_1)
+                result_text_box.configure(state='disabled')
+
+            elif bmi >= 30:
+                result_message_2 = f"Your BMI of {bmi} considered overweight"
+                result_text_box.insert('end', result_message_2)
+                result_text_box.configure(state='disabled')
+
+            elif bmi <= 20:
+                result_message_3 = f" Your BMI of {bmi} is considered underweight"
+                result_text_box.insert('end', result_message_3)
+                result_text_box.configure(state='disabled')
+
+        elif gender == 'F' or gender == 'f' or gender == "Female" or gender == "female":
+            if bmi >= 18 and bmi <= 30:
+                result_message_4 = f"BMI of {bmi} is healthy for you"
+                result_text_box.insert('end', result_message_4)
+                result_text_box.configure(state='disabled')
+
+            elif bmi >= 30:
+                result_message_5 = f" Your BMI of {bmi} is considered overweight"
+                result_text_box.insert('end', result_message_5)
+                result_text_box.configure(state='disabled')
+
+            elif bmi <= 18:
+                result_message_6 = f"Your BMI of {bmi} is considered underweight"
+                result_text_box.insert('end', result_message_6)
+                result_text_box.configure(state='disabled')
+
+        else:
+            error_message_one = "Please enter either male or female. You can also enter M or F."
+            messagebox.showerror("Error Message", error_message_one)
+
+    except ValueError:
+        error_message_b= "Please enter appropriate values for height and weight"
+        messagebox.showerror("Error Message", error_message_b)
+
+
+mainWindow.mainloop()
