@@ -100,3 +100,20 @@ result_label.place(x=415, y=170)
 result_text_box.place(x=415,y=200)
 back_button.place(x=545, y=340)
 # ~~~~~~~~~~~~~~~~ end of window2 ~~~~~~~~~~~~~~~~
+
+
+# ~~~~~~~~~~~~~~~~ window3 ~~~~~~~~~~~~~~~~
+img = Label(window3, image=render)
+img.place(x=0, y=0)
+
+game_mode_title = Label(window3, text='Game Mode', bg='#DAF3F0',fg='black',font=('Modern', 25, 'bold'))
+game_mode_label_a = Label(window3, text='Try guessing your BMI and the program', bg='#DAF3F0',fg='#535353', font=('Calibri', 12, 'normal'))
+game_mode_label_b = Label(window3, text="will tell you when you're hot or cold", bg='#DAF3F0',fg='#535353', font=('Calibri', 12, 'normal'))
+
+game_mode_entry = Label(window3, text='Enter your guess below: ', bg='#DAF3F0',fg='#535353', font=('Calibri', 12, 'normal'))
+game_mode_entry_box = Entry(window3, highlightthickness=2)
+game_mode_entry_box.config(width=30)
+game_mode_result = Label(window3, text='Result:', bg='#DAF3F0',fg='#535353', font=('Calibri', 12, 'normal'))
+game_mode_result_text_box = Text(window3, height=5, width=25, wrap=WORD, highlightthickness=2)
+game_mode_result_text_box.config(highlightcolor='#DAF3F0')
+
