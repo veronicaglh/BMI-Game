@@ -66,3 +66,16 @@ calculate_button. config(width=8)
 game_mode_button = Button(window1, text='Game Mode',fg='#535353',font=('Calibri', 12, 'normal'), command=lambda: show_frame(window3))
 game_mode_button. config(width=10)
 
+# Placing the widgets of window1
+label_1.place(x=370, y=120)
+label_2.place(x=450, y=160)
+get_biological_sex.place(x=370, y=210)
+get_biological_sex_entry.place(x=472, y=212)
+get_weight.place(x=370, y=242)
+get_weight_entry.place(x=472, y=246)
+get_height.place(x=370, y=272)
+get_height_entry.place(x=472, y=276)
+game_mode_button.place(x=430, y=305)
+calculate_button.place(x=525, y=305)
+# ~~~~~~~~~~~~~~~~ end of window1 ~~~~~~~~~~~~~~~~
+
