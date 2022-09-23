@@ -178,4 +178,58 @@ def BMI():
         messagebox.showerror("Error Message", error_message_b)
 
 
+# Function to implement game section of BMI
+def gameBMI():
+    try:
+        guess = float(game_mode_entry_box.get())
+        height = float(get_height_entry.get())
+        weight = float(get_weight_entry.get())
+        bmi = float(weight // (height * height))
+
+        bmi = math.floor(bmi)  # Eg bmi = 35.5 then math.floor(bmi) = 35
+        game_mode_result_text_box.delete("1.0", END)
+
+        while guess != bmi:
+            guess = float(game_mode_entry_box.get().strip() or 1)
+
+            if guess > bmi:
+                guess_result_1 = "Lower!\n"
+                game_mode_result_text_box.insert('end', guess_result_1)
+                game_mode_result_text_box.configure(state='normal')
+                game_mode_result_text_box.config(highlightbackground='#80A0D6')
+
+                if guess - 10 == bmi:
+                    game_mode_result_text_box.config(highlightbackground='#FFB2B2')
+
+                for i in range(1, 6):
+                    if guess - i == bmi:
+                        game_mode_result_text_box.config(highlightbackground='#FF7E7E')
+                break
+
+            elif guess < bmi:
+                guess_result_2 = "Higher!\n"
+                game_mode_result_text_box.insert('end', guess_result_2)
+                game_mode_result_text_box.configure(state='normal')
+                game_mode_result_text_box.config(highlightbackground='#FFCBCB')
+
+                if guess + 10 == bmi:
+                    game_mode_result_text_box.config(highlightbackground='#FFB2B2')
+
+                for i in range(1, 6):
+                    if guess + i == bmi:
+                        game_mode_result_text_box.config(
+                            highlightbackground='#FF7E7E')
+                break
+
+        if guess == bmi:
+            guess_result_3 = "Bingo! You guessed correctly.\n"
+            game_mode_result_text_box.insert('end', guess_result_3)
+            game_mode_result_text_box.configure(state='normal')
+            game_mode_result_text_box.config(highlightbackground='#FF3232')
+
+    except ValueError:
+        error_message_two = "Please enter appropriate values for height, weight and guess input"
+        messagebox.showerror("Error Message", error_message_two)
+
+
 mainWindow.mainloop()
