@@ -7,13 +7,14 @@
 # by running the following command on your IDE's terminal
 # pip install pillow
 
+# Import Statements
 import math
 from tkinter import *
 from tkinter import messagebox
 from PIL import Image, ImageTk
 import threading
 
-# TKINTER - GUI
+# PART I: TKINTER - GUI
 mainWindow = Tk()
 mainWindow.geometry('736x414')
 mainWindow.rowconfigure(0, weight=1)
@@ -43,7 +44,7 @@ show_frame(window1)
 
 # ~~~~~~~~~~~~~~~~ window1 ~~~~~~~~~~~~~~~~
 # Declaring the widgets of window1
-load = Image.open('Images\\BMI_Background_Image_4.jpg')
+load = Image.open('Images\\BMI_Background_Image.jpg')
 render = ImageTk.PhotoImage(load)
 img = Label(window1, image=render)
 img.place(x=0, y=0)
@@ -128,7 +129,7 @@ game_mode_result_text_box.place(x=415, y=280)
 # ~~~~~~~~~~~~~~~~ end of window3 ~~~~~~~~~~~~~~~~
 
 
-# CALCULATING THE BMI
+# PART II: CALCULATING THE BMI
 def BMI():
     """ A function for calculating BodyMassIndex for the user """
     gender = get_biological_sex_entry.get()
