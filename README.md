@@ -1,2 +1,2 @@
-###### This program will calculate the BMI of users. In addition, it also has a Game Mode(optional) which lets users guess their BMI, and the program will inform them when they have guessed correctly. The GUI has been built with tkinter. To view the result please run the BMI.py file as a python program. 
+###### This program will calculate the BMI of users. In addition, it also has a Game Mode (optional) which lets users guess their BMI, and the program will inform them when they have guessed correctly. The GUI has been built with tkinter. To view the result please run the BMI.py file as a python program. 
 ###### Don't want to clone this repo? You can view the output here: https://drive.google.com/file/d/1BuHBuh0XhEmNVOywjQzQS6cHuPoVubaO/view?usp=sharing 
